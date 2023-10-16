@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.sendFile('/Users/chriswagner/Desktop/JS WD/notesApp/frontend/index.js')
+    res.sendFile('/Users/chriswagner/Desktop/JS WD/notesApp/frontend/src/index.js')
 })
 
 app.listen(6000, function () {
