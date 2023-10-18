@@ -1,24 +1,11 @@
-html {
+/* html {
     margin: 0;
-}
+} */
 
-body {
+/* body {
     background-color: #e5e5f7;
     opacity: 0.8;
     background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
     background-size: 10px 10px;
-}
+} */
 
-.center-screen {
-    background-color: #F4D03F;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 95vh;
-    width: 82.5%;
-    border-radius: 15%;
-    margin: auto;
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
-  }

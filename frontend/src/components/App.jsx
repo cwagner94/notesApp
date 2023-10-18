@@ -1,11 +1,9 @@
-import '../CSS/App.css'
+import Background from './Background';
 
 function App() {
     return (
         <div>
-            <div className='center-screen'>
-                {/* <h1>Note Keeper</h1> */}
-            </div>
+            <Background />
         </div>
     )
 }

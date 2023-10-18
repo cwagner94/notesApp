@@ -1,0 +1,24 @@
+body {
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
+}
+
+.center-screen {
+    background-color: #F4D03F;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* text-align: center; */
+    min-height: 88vh;
+    width: 82.5%;
+    border-radius: 15%;
+    margin: auto;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    padding: 3%;
+    border-style: solid;
+    border-color: gray;
+  }
