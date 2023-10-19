@@ -6,6 +6,7 @@ function Note() {
     return (
         <div className='note-body'>
             <NoteTitle />
+            <hr />
             <NoteContent />
         </div>
     )

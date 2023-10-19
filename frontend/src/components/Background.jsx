@@ -3,10 +3,27 @@ import Note from './Note'
 
 function Background() {
     return (
-        <div className='center-screen'>
-            <Note />
-            <Note />
-            <Note />
+        <div className='notes-block'>
+            <div className='center-screen'>
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+                <Note />
+            </div>
         </div>
     )
 }
