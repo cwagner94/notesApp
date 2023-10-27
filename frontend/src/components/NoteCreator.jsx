@@ -1,30 +1,27 @@
-import '../CSS/Note.css';
+import '../CSS/NoteCreator.css';
 import NoteTitle from './NoteTitle';
 import NoteContent from './NoteContent';
 
-function Note() {
+function NoteCreator() {
     return (
-        <div className='note-body'>
-            <NoteTitle />
-            <hr />
-            <NoteContent />
-            {/* <form>
-                <div className='noteTitle'>
+        <div className='noteCreator-body'>
+            <form>
+                <div className='noteCreatorTitle'>
                     <input
                         name='title'
                         placeholder='Title'
                     />
                 </div>
                 <hr />
-                <div className='noteContent'>
+                <div className='noteCreatorContent'>
                     <textarea
                         name='content'
                         placeholder='Write something here...'
                     />
                 </div>
-            </form> */}
+            </form>
         </div>
     )
 }
 
-export default Note
+export default NoteCreator
