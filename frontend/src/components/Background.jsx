@@ -2,7 +2,7 @@ import '../CSS/Background.css'
 import Note from './Note'
 import NoteCreator from './NoteCreator'
 
-function Background() {
+function Background(props) {
     return (
         <div>
             <div className='center-screen'>
@@ -11,18 +11,14 @@ function Background() {
                 </div>
                 <hr className='line' />
                 <div className='notesBody'>
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
-                    <Note />
+                    {props.notes.map((note, index) => {
+                        return (
+                            <Note
+                                noteTitle={note.title}
+                                noteContent={note.content}
+                            />
+                        )
+                    })}
                 </div>
             </div>
         </div>

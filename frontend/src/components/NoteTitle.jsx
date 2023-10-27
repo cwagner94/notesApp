@@ -1,9 +1,10 @@
+import React from 'react';
 import '../CSS/NoteTitle.css'
 
-function NoteTitle() {
+function NoteTitle(props) {
     return (
         <div className='noteTitle'>
-            <h3>Note Title</h3>
+            <h3>{props.noteTitle}</h3>
         </div>
     )
 }

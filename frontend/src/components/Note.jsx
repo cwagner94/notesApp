@@ -1,28 +1,14 @@
+import React from 'react';
 import '../CSS/Note.css';
 import NoteTitle from './NoteTitle';
 import NoteContent from './NoteContent';
 
-function Note() {
+function Note(props) {
     return (
         <div className='note-body'>
-            <NoteTitle />
+            <NoteTitle noteTitle={props.noteTitle} />
             <hr />
-            <NoteContent />
-            {/* <form>
-                <div className='noteTitle'>
-                    <input
-                        name='title'
-                        placeholder='Title'
-                    />
-                </div>
-                <hr />
-                <div className='noteContent'>
-                    <textarea
-                        name='content'
-                        placeholder='Write something here...'
-                    />
-                </div>
-            </form> */}
+            <NoteContent noteContent={props.noteContent} />
         </div>
     )
 }
