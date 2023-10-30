@@ -7,13 +7,15 @@ function Background(props) {
         <div>
             <div className='center-screen'>
                 <div className='notesCreatorHolder'>
-                    <NoteCreator />
+                    <NoteCreator buttonAction={props.buttonAction} />
                 </div>
                 <hr className='line' />
                 <div className='notesBody'>
                     {props.notes.map((note, index) => {
                         return (
                             <Note
+                                key={note.key}
+                                id={index}
                                 noteTitle={note.title}
                                 noteContent={note.content}
                             />

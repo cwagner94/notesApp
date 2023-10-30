@@ -1,8 +1,9 @@
 import '../CSS/NoteCreator.css';
 import NoteTitle from './NoteTitle';
 import NoteContent from './NoteContent';
+import AddButton from './AddButton';
 
-function NoteCreator() {
+function NoteCreator(props) {
     return (
         <div className='noteCreator-body'>
             <form>
@@ -19,6 +20,7 @@ function NoteCreator() {
                         placeholder='Write something here...'
                     />
                 </div>
+                <AddButton buttonAction={props.buttonAction} />
             </form>
         </div>
     )
