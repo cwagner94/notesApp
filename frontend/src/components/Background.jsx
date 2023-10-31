@@ -4,24 +4,23 @@ import NoteCreator from './NoteCreator'
 
 function Background(props) {
     return (
-        <div>
-            <div className='center-screen'>
-                <div className='notesCreatorHolder'>
-                    <NoteCreator addNote={props.addNote} />
-                </div>
-                <hr className='line' />
-                <div className='notesBody'>
-                    {props.notes.map((note, index) => {
-                        return (
-                            <Note
-                                key={note.key}
-                                id={index}
-                                noteTitle={note.title}
-                                noteContent={note.content}
-                            />
-                        )
-                    })}
-                </div>
+        <div className='center-screen'>
+            <div className='notesCreatorHolder'>
+                <NoteCreator addNote={props.addNote} />
+            </div>
+            <hr className='line' />
+            <div className='notesBody'>
+                {props.notes.map((note, index) => {
+                    return (
+                        <Note
+                            key={index}
+                            id={index}
+                            noteTitle={note.title}
+                            noteContent={note.content}
+                            deleteNote={props.deleteNote}
+                        />
+                    )
+                })}
             </div>
         </div>
     )
