@@ -9,6 +9,8 @@ app.get('/', (req, res) => {
     res.sendFile('/Users/chriswagner/Desktop/JS WD/notesApp/frontend/src/index.js')
 })
 
+// app.post('/')
+
 app.listen(6000, function () {
     console.log('Server started on port 6000...')
 })

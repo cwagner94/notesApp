@@ -31,7 +31,7 @@ function App() {
 
     return (
         <div>
-            <Background notes={notes} buttonAction={addNote} />
+            <Background notes={notes} addNote={addNote} />
         </div>
     )
 }

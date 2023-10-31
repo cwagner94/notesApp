@@ -7,7 +7,7 @@ function Background(props) {
         <div>
             <div className='center-screen'>
                 <div className='notesCreatorHolder'>
-                    <NoteCreator buttonAction={props.buttonAction} />
+                    <NoteCreator addNote={props.addNote} />
                 </div>
                 <hr className='line' />
                 <div className='notesBody'>
