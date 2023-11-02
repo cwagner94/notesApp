@@ -17,6 +17,12 @@ function App() {
         })
     }
 
+    // function editNote(id) {
+    //     setNotes(previousNotes => {
+    //         return ([...previousNotes,])
+    //     })
+    // }
+
 
     return (
         <div>

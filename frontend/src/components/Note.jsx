@@ -5,8 +5,12 @@ import NoteContent from './NoteContent';
 
 function Note(props) {
 
-    function handleClick() {
+    function handleDeleteClick() {
         props.deleteNote(props.id)
+    }
+
+    function handleEditClick() {
+        props.editNote()
     }
 
     return (
@@ -14,7 +18,8 @@ function Note(props) {
             <NoteTitle noteTitle={props.noteTitle} />
             <hr />
             <NoteContent noteContent={props.noteContent} />
-            <button onClick={handleClick}>DELETE</button>
+            <button onClick={handleDeleteClick}>DELETE</button>
+            {/* <button onclick={handleEditClick}>EDIT</button> */}
         </div>
     )
 }
