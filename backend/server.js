@@ -26,3 +26,7 @@ app.listen(6000, function () {
 // https://www.youtube.com/watch?v=bxsemcrY4gQ
 // https://stackoverflow.com/questions/60498948/securely-use-connection-string-of-mongoatlas-in-node-js-to-connect-to-mongodb
 // encrypt and decrypt connection string when using
+
+
+// TODO
+// backend node_modules need to be included in .gitignore
