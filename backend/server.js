@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const Note = require('./models/note')
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -10,16 +11,52 @@ app.use(bodyParser.json());
 // connect to mongoDB
 const adminName = process.env.MONGODBUSERNAME
 const password = encodeURIComponent(process.env.MONGODBPASSWORD)
-const dbURI = `mongodb+srv://${adminName}:${password}@cluster0.epj1x.mongodb.net/?retryWrites=true&w=majority`
-// mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+const server = process.env.MONGODBSERVER
+const database = process.env.MONGODBNAME
+const dbURI = `mongodb+srv://${adminName}:${password}@${server}/${database}?retryWrites=true&w=majority`
+
+
 mongoose.connect(dbURI)
     .then(res => {
         console.log('connected to database...')
-        app.listen(6000, function () {
-            console.log('Server started on port 6000...')
+        app.listen(6060, function () {
+            console.log('Server started on port 6060...')
         })
     })
     .catch(err => console.log(err))
+
+
+app.get('/add-note', (req, res) => {
+    const note = new Note({
+        title: 'test note title2',
+        content: 'test note content2'
+    });
+
+    note.save()
+        .then((result) => {
+            res.send(result)
+        })
+        .catch(err => console.log(err))
+})
+
+
+app.get('/all-notes', (req, res) => {
+    Note.find()
+        .then((result) => {
+            res.send(result)
+        })
+        .catch(err => console.log(err))
+})
+
+
+app.get('/single-note', (req, res) => {
+    Note.findById('65451681615961b6f971ac52')
+        .then((result) => {
+            res.send(result)
+        })
+        .catch(err => console.log(err))
+})
+
 
 app.get('/', (req, res) => {
     res.sendFile('/Users/chriswagner/Desktop/JS WD/notesApp/frontend/src/index.js')
