@@ -23,14 +23,40 @@ function NoteCreator(props) {
 
     }
 
+    // function buttonAction(event) {
+    //     props.addNote(note)
+    //     setNote({
+    //         'title': '',
+    //         'content': ''
+    //     })
+    //     event.preventDefault()
+    // }
+
     function buttonAction(event) {
         props.addNote(note)
+        fetch('http://127.0.0.1:6000/add-note', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(note)
+        })
         setNote({
             'title': '',
             'content': ''
         })
         event.preventDefault()
     }
+
+    // function createNote() {
+    //     fetch('http://127.0.0.1:6000/add-note', {
+    //         method: 'POST',
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(note)
+    //     })
+    // }
 
     return (
         <div className='noteCreator-body'>

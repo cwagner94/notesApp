@@ -19,24 +19,26 @@ const dbURI = `mongodb+srv://${adminName}:${password}@${server}/${database}?retr
 mongoose.connect(dbURI)
     .then(res => {
         console.log('connected to database...')
-        app.listen(6060, function () {
-            console.log('Server started on port 6060...')
+        app.listen(6000, function () {
+            console.log('Server started on port 6000...')
         })
     })
     .catch(err => console.log(err))
 
 
 app.get('/add-note', (req, res) => {
-    const note = new Note({
-        title: 'test note title2',
-        content: 'test note content2'
-    });
+    var newNote = req.body
+    console.log(`Note ${newNote}`)
+    // const note = new Note({
+    //     title: 'test note title2',
+    //     content: 'test note content2'
+    // });
 
-    note.save()
-        .then((result) => {
-            res.send(result)
-        })
-        .catch(err => console.log(err))
+    // note.save()
+    //     .then((result) => {
+    //         res.send(result)
+    //     })
+    //     .catch(err => console.log(err))
 })
 
 
@@ -70,5 +72,3 @@ app.get('/', (req, res) => {
 
 // https://www.linkedin.com/advice/0/how-do-you-securely-store-manage-user#:~:text=Use%20hashing%20and%20salting%20for%20passwords&text=You%20should%20use%20a%20secure,as%20MD5%20or%20SHA%2D1.
 // https://www.youtube.com/watch?v=bxsemcrY4gQ
-// https://stackoverflow.com/questions/60498948/securely-use-connection-string-of-mongoatlas-in-node-js-to-connect-to-mongodb
-// encrypt and decrypt connection string when using
