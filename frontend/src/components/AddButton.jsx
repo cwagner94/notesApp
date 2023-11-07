@@ -1,8 +1,9 @@
 import '../CSS/AddButton.css'
 
-function AddButton(props) {
+function AddButton() {
     return (
-        <button type='button' className='addButton' onClick={props.onClick}>+</button>
+        // <button type='button' className='addButton' onClick={props.onClick}>+</button>
+        <input type='submit' className='addButton' value='+' />
     )
 }
 

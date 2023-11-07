@@ -33,34 +33,27 @@ function NoteCreator(props) {
     // }
 
     function buttonAction(event) {
+        event.preventDefault()
         props.addNote(note)
-        fetch('http://127.0.0.1:6000/add-note', {
+        fetch('http://localhost:5000/add-note', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(note)
         })
-        setNote({
-            'title': '',
-            'content': ''
-        })
-        event.preventDefault()
+            .then((res) => {
+                setNote({
+                    'title': '',
+                    'content': ''
+                })
+            })
+            .catch(err => { console.log(err) })
     }
-
-    // function createNote() {
-    //     fetch('http://127.0.0.1:6000/add-note', {
-    //         method: 'POST',
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(note)
-    //     })
-    // }
 
     return (
         <div className='noteCreator-body'>
-            <form>
+            <form onSubmit={buttonAction}>
                 <div className='noteCreatorTitle'>
                     <input
                         name='title'
@@ -78,7 +71,7 @@ function NoteCreator(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <AddButton onClick={buttonAction} />
+                <AddButton />
             </form>
         </div>
     )

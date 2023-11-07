@@ -1,8 +1,12 @@
+import React, { useState } from 'react'
 import '../CSS/Background.css'
 import Note from './Note'
 import NoteCreator from './NoteCreator'
 
 function Background(props) {
+
+    const []
+
     return (
         <div className='center-screen'>
             <div className='notesCreatorHolder'>
