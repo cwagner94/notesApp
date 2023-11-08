@@ -45,6 +45,14 @@ app.post('/add-note', (req, res) => {
 })
 
 
+app.post('/delete-note/:id', (req, res) => {
+    var id = req.params.id
+    Note.findByIdAndDelete(id)
+        .then(res => console.log('Note successfully deleted'))
+        .catch(err => console.log(err))
+})
+
+
 app.get('/all-notes', (req, res) => {
     Note.find()
         .then((result) => {
@@ -54,18 +62,10 @@ app.get('/all-notes', (req, res) => {
 })
 
 
-// app.get('/single-note', (req, res) => {
-//     Note.findById('65451681615961b6f971ac52')
-//         .then((result) => {
-//             res.send(result)
-//         })
-//         .catch(err => console.log(err))
-// })
-
-
 app.get('/', (req, res) => {
     res.sendFile('/Users/chriswagner/Desktop/JS WD/notesApp/frontend/src/index.js')
 })
 
 // https://www.linkedin.com/advice/0/how-do-you-securely-store-manage-user#:~:text=Use%20hashing%20and%20salting%20for%20passwords&text=You%20should%20use%20a%20secure,as%20MD5%20or%20SHA%2D1.
 // https://www.youtube.com/watch?v=bxsemcrY4gQ
+// https://www.youtube.com/watch?v=VVGgacjzc2Y

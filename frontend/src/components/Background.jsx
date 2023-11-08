@@ -1,27 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../CSS/Background.css'
 import Note from './Note'
 import NoteCreator from './NoteCreator'
 
 function Background(props) {
 
-    const [notes, setNotes] = useState()
+    const [notes, setNotes] = useState([])
+
+
+    function getNotes() {
+        fetch('http://localhost:5000/all-notes')
+            .then(res => res.json())
+            .then(res => setNotes(res))
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getNotes()
+    })
 
     return (
         <div className='center-screen'>
             <div className='notesCreatorHolder'>
-                <NoteCreator addNote={props.addNote} />
+                <NoteCreator />
             </div>
             <hr className='line' />
             <div className='notesBody'>
-                {props.notes.map((note, index) => {
+                {notes.map((note, index) => {
                     return (
                         <Note
                             key={index}
-                            id={index}
+                            id={note._id}
                             noteTitle={note.title}
                             noteContent={note.content}
-                            deleteNote={props.deleteNote}
                         />
                     )
                 })}

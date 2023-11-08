@@ -5,8 +5,13 @@ import NoteContent from './NoteContent';
 
 function Note(props) {
 
-    function handleDeleteClick() {
-        props.deleteNote(props.id)
+    function deleteNote() {
+        fetch(`http://localhost:5000/delete-note/${props.id}`, {
+            method: 'POST',
+        })
+            .then((res) => {
+            })
+            .catch(err => { console.log(err) })
     }
 
     function handleEditClick() {
@@ -18,8 +23,7 @@ function Note(props) {
             <NoteTitle noteTitle={props.noteTitle} />
             <hr />
             <NoteContent noteContent={props.noteContent} />
-            <button onClick={handleDeleteClick}>DELETE</button>
-            {/* <button onclick={handleEditClick}>EDIT</button> */}
+            <button onClick={deleteNote}>DELETE</button>
         </div>
     )
 }

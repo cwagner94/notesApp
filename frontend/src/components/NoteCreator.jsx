@@ -23,18 +23,8 @@ function NoteCreator(props) {
 
     }
 
-    // function buttonAction(event) {
-    //     props.addNote(note)
-    //     setNote({
-    //         'title': '',
-    //         'content': ''
-    //     })
-    //     event.preventDefault()
-    // }
-
     function buttonAction(event) {
         event.preventDefault()
-        props.addNote(note)
         fetch('http://localhost:5000/add-note', {
             method: 'POST',
             headers: {
