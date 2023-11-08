@@ -5,7 +5,7 @@ import NoteCreator from './NoteCreator'
 
 function Background(props) {
 
-    const []
+    const [notes, setNotes] = useState()
 
     return (
         <div className='center-screen'>

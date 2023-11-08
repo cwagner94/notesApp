@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Background from './Background';
 
 function App() {
 
     const [notes, setNotes] = useState([])
+
+
+    async function getNotes() {
+        fetch('http://localhost:5000/all-notes')
+            .then(res => res.json())
+            .then(res => setNotes(res))
+            .catch(err => console.log(err))
+    }
+
 
     function addNote(newNote) {
         setNotes(previousNotes => {
@@ -23,6 +32,9 @@ function App() {
     //     })
     // }
 
+    useEffect(() => {
+        getNotes()
+    })
 
     return (
         <div>

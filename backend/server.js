@@ -54,13 +54,13 @@ app.get('/all-notes', (req, res) => {
 })
 
 
-app.get('/single-note', (req, res) => {
-    Note.findById('65451681615961b6f971ac52')
-        .then((result) => {
-            res.send(result)
-        })
-        .catch(err => console.log(err))
-})
+// app.get('/single-note', (req, res) => {
+//     Note.findById('65451681615961b6f971ac52')
+//         .then((result) => {
+//             res.send(result)
+//         })
+//         .catch(err => console.log(err))
+// })
 
 
 app.get('/', (req, res) => {
