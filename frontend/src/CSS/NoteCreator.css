@@ -30,9 +30,10 @@ form input {
 
 .noteCreator-body {
     background-color: #e5e5f7;
-    height: 20vh;
-    width: 60vh;
-    border-radius: 15%;
+    min-width: 480px;
+    max-width: 480px;
+    height: 200px;
+    border-radius: 17%;
     position: relative;
     margin-bottom: 2.5%;
     border-style: solid;

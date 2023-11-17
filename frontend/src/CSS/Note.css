@@ -45,8 +45,8 @@ form input {
 
 .note-body {
     background-color: #e5e5f7;
-    height: 20vh;
-    width: 20vh;
+    min-width: 225px;
+    min-height: 225px;
     border-radius: 15%;
     position: relative;
     margin: 2.5%;
@@ -58,4 +58,11 @@ form input {
 
 .note-body::-webkit-scrollbar {
     display: none;
+}
+
+button {
+    border-radius: 50%;
+    max-width: 50px;
+    max-height: 50px;
+    position: absolute;
 }

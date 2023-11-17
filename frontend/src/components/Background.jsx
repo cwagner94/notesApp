@@ -42,3 +42,5 @@ function Background(props) {
 }
 
 export default Background
+
+// justify-content: space-between space-around space-evenly
